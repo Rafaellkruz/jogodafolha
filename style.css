@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-color: #f0f4f0;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #2c5e2d;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.number {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: bold;
+}
+
+.number:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.number.marcado {
+  background-color: #a5a5a5;
+  cursor: default;
+  transform: scale(0.95);
+  color: #555;
+}
+
+.controles {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#sortearBtn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#sortearBtn:hover {
+  background-color: #2980b9;
+}
+
+/* --- ESTILOS DO MODAL DE PERGUNTA --- */
+
+/* Esconde o modal por padrão */
+.modal-oculto {
+  display: none !important;
+}
+
+#pergunta-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75); /* Fundo escuro semi-transparente */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Animação de surgimento */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Classe para mostrar o modal */
+#pergunta-modal.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-conteudo {
+  background-color: #ffffff;
+  padding: 50px 30px 30px 30px; /* Mais espaço no topo para o botão de fechar */
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  /* Animação de entrada */
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+#pergunta-modal.visivel .modal-conteudo {
+    transform: scale(1);
+}
+
+.fechar-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: bold;
+  color: #777;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fechar-btn:hover {
+  color: #000;
+}
+
+#texto-pergunta-modal {
+  font-size: 1.5em; /* Fonte maior para destaque */
+  font-weight: bold;
+  color: #2c5e2d;
+  min-height: 50px;
+  margin: 0 0 20px 0;
+}
+
+#texto-resposta-modal {
+  display: none;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  font-style: italic;
+  font-size: 1.1em;
+  color: #333;
+  text-align: left;
+}
+
+#mostrarRespostaBtnModal {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+  font-size: 1em;
+}
+
+#mostrarRespostaBtnModal:hover {
+  background-color: #e67e22;
+}
